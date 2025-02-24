@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 19060982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423299814}
+        m_TargetAssemblyTypeName: UI.Graphic.GraphicController, Assembly-CSharp
+        m_MethodName: OnApplyChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &19060982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +334,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84157369}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423299814}
+        m_TargetAssemblyTypeName: UI.Graphic.GraphicController, Assembly-CSharp
+        m_MethodName: OnChangeFullscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84157369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +396,7 @@ GameObject:
   - component: {fileID: 90948366}
   - component: {fileID: 90948368}
   - component: {fileID: 90948367}
+  - component: {fileID: 90948369}
   m_Layer: 5
   m_Name: GroupGraphic
   m_TagString: Untagged
@@ -439,6 +464,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90948365}
   m_CullTransparentMesh: 1
+--- !u!114 &90948369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90948365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc69b30eb5a548efbdf53ec377d9f084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 1080457262}
 --- !u!1 &93962823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,13 +1310,14 @@ GameObject:
   - component: {fileID: 423299811}
   - component: {fileID: 423299813}
   - component: {fileID: 423299812}
+  - component: {fileID: 423299814}
   m_Layer: 5
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &423299811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1341,6 +1380,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423299810}
   m_CullTransparentMesh: 1
+--- !u!114 &423299814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423299810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d59ff8ad215f349881b97de0e03d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionGroup: {fileID: 90948369}
+  txtFullscreen: {fileID: 2033388624}
+  rectTransformCamera: {fileID: 810229433}
+  buttonApplyChange: {fileID: 19060982}
 --- !u!1 &433340359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1967,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 567692565}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 90948369}
+        m_TargetAssemblyTypeName: UI.Graphic.ResolutionGroup, Assembly-CSharp
+        m_MethodName: OnChangeValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &567692565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4108,7 +4175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1469368176}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 90948369}
+        m_TargetAssemblyTypeName: UI.Graphic.ResolutionGroup, Assembly-CSharp
+        m_MethodName: OnChangeValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1469368176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4708,8 +4787,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtLanguage: {fileID: 1139245945}
+  txtGraphic: {fileID: 1302320914}
   musicVolumeGroup: {fileID: 165941779}
   soundVolumeGroup: {fileID: 565083735}
+  languageScreen: {fileID: 784058478}
+  graphicScreen: {fileID: 423299810}
 --- !u!1 &1667207190
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,7 +4809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1667207191
 RectTransform:
   m_ObjectHideFlags: 0
