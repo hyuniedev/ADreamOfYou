@@ -1,21 +1,8 @@
+using DesignPattern;
 using Enum;
 using UnityEngine;
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 { 
-    private static GameManager _instance;
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindFirstObjectByType<GameManager>();
-            }
-            return _instance;
-        }
-    }
-
     public bool IsFullscreen { get; set; } = true;
     public ELanguage Language { get; set; } = ELanguage.English;
     public Resolution Resolution { get; set; } = new Resolution(1920, 1080);

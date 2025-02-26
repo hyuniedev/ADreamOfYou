@@ -15,8 +15,8 @@ namespace UI.Settings
         [SerializeField] private GameObject graphicScreen;
         private void Update()
         {
-            txtLanguage.text = "Ngôn ngữ: " + GameManager.Instance.Language.ToString();
-            txtGraphic.text = "Đồ họa: " + GameManager.Instance.Resolution.ToString();
+            txtLanguage.text = "Ngôn ngữ: " + GameManager.Instance.Language;
+            txtGraphic.text = "Đồ họa: " + GameManager.Instance.Resolution;
         }
 
         public void ChangeMusicVolume(int volume)
