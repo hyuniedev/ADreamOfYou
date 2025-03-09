@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Manager;
 using UnityEngine;
+using Resolution = Manager.Resolution;
 
 namespace UI.Graphic
 {

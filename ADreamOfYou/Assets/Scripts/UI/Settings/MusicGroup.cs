@@ -1,4 +1,6 @@
 using System;
+using Manager;
+using Sound;
 using UnityEngine;
 
 namespace UI.Settings
@@ -17,6 +19,7 @@ namespace UI.Settings
             base.OnChangeValue(value);
             SetTextUI();
             GameManager.Instance.Volume = new Volume(Value,GameManager.Instance.Volume.Sound);
+            SoundController.Instance.UpdateVolumeMusic();
         }
 
         private void SetTextUI()

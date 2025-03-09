@@ -1,5 +1,7 @@
 using System;
 using Camera;
+using Manager;
+using Sound;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,17 +20,6 @@ namespace UI.Settings
             txtLanguage.text = "Ngôn ngữ: " + GameManager.Instance.Language;
             txtGraphic.text = "Đồ họa: " + GameManager.Instance.Resolution;
         }
-
-        public void ChangeMusicVolume(int volume)
-        {
-            musicVolumeGroup.OnChangeValue(volume);
-        }
-
-        public void ChangeSoundVolume(int volume)
-        {
-            soundVolumeGroup.OnChangeValue(volume);
-        }
-        
         public void OnClickLanguageButton()
         {
             CameraUI.Instance.Next();

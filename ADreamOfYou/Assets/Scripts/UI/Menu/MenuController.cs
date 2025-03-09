@@ -1,5 +1,7 @@
 using System;
 using Camera;
+using Enum;
+using Manager;
 using UnityEngine;
 
 namespace UI.Menu
@@ -26,7 +28,7 @@ namespace UI.Menu
 
         public void OnClickNewGame()
         {
-            
+            SceneManager.Instance.ChangeScene(EScene.Chapter1S1);
         }
         
         public void OnClickSettings()

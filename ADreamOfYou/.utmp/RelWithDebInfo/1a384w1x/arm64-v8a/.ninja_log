@@ -1,12 +1,12 @@
 # ninja log v5
-88	700	7621999904262682	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	235b8b46cbdb9b08
-702	975	7621999907007560	D:/MyCode/ADreamOfYou/ADreamOfYou/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1a384w1x/obj/arm64-v8a/libswappywrapper.so	9b6253c2b1d91270
-26	1920	7621999916431399	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	154eea08247befe1
-61	1970	7621999916889815	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d4fec457c90d44bc
-41	1971	7621999916859785	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	be3d8729dd14d342
-8	2011	7621999917355391	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	b24074160a6c268c
-77	2132	7621999918556993	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	6aae77ae666b0d6
-17	2247	7621999919675672	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	e277098bce9be3a8
-50	2522	7621999922514427	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	ed20159bacf4b120
-1	2688	7621999924192263	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f749d87bfd84fa2f
-2688	2809	7621999925530093	D:/MyCode/ADreamOfYou/ADreamOfYou/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1a384w1x/obj/arm64-v8a/libgame.so	83b360fdec30f7a5
+37	302	7629565999201380	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	235b8b46cbdb9b08
+303	462	7629566000952989	D:/MyCode/ADreamOfYou/ADreamOfYou/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1a384w1x/obj/arm64-v8a/libswappywrapper.so	9b6253c2b1d91270
+18	1057	7629566006717526	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	154eea08247befe1
+27	1067	7629566006909123	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d4fec457c90d44bc
+9	1068	7629566006909123	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	b24074160a6c268c
+33	1133	7629566007601649	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	6aae77ae666b0d6
+13	1142	7629566007687508	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	be3d8729dd14d342
+5	1200	7629566008263115	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	e277098bce9be3a8
+22	1315	7629566009416791	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	ed20159bacf4b120
+0	1420	7629566010445495	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f749d87bfd84fa2f
+1420	1532	7629566011642579	D:/MyCode/ADreamOfYou/ADreamOfYou/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1a384w1x/obj/arm64-v8a/libgame.so	83b360fdec30f7a5
