@@ -1,3 +1,5 @@
+using Enum;
+using Manager;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -5,55 +7,45 @@ using Random = UnityEngine.Random;
 
 namespace Chapters.Chapter1
 {
-    public class Toothbrush : MonoBehaviour,IDragHandler, IEndDragHandler
+    public class Toothbrush : MonoBehaviour,IDragHandler, IEndDragHandler, ISceneManager
     {
-        private Vector3 _brush;
+        private Vector3 _originalPosition;
         [SerializeField] private GameObject boundLimit;
-        private bool _isStopDrag = false;
-        [SerializeField]
-        private RectTransform slider;
-        [SerializeField]
-        private int maxValue = 150;
-        private float _curStack = 0;
-        private Vector3 _prevPos;
+        [SerializeField] private GameObject tooth;
+        [SerializeField] private StackProcess stack;
+        
+        [Range(0f,1f)]
+        [SerializeField] private float durationCheck = 1f;
+        [SerializeField] private float addValuePerPush = 20f;
+
+        private float _curValueCheck;
+        private Vector2 _prevDirection = Vector2.one;
+        private Vector3 _currentToothPosition;
         private void Start()
         {
-            _curStack = 0;
-            _prevPos = transform.position;
-            slider.sizeDelta = new Vector2(0,slider.sizeDelta.y);
-            _brush = transform.position;
-        }
-
-        private void Update()
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                _isStopDrag = false;
-            }
+            _originalPosition = tooth.transform.position;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             if (!boundLimit.GetComponent<BoxCollider2D>().bounds.Contains(eventData.position))
+                return;
+            tooth.transform.position = eventData.position;
+
+            _curValueCheck += Time.deltaTime * 2f;
+            if (_curValueCheck >= durationCheck)
             {
-                _isStopDrag = true;
-            }
-            else
-            {
-                _isStopDrag = false;
-                transform.position = eventData.position;
-            }
-            if (_isStopDrag) return;
-            _curStack += Time.deltaTime * 2;
-            if (_curStack >= 1f)
-            {
-                if (Vector3.Distance(transform.position, _prevPos) > 100f)
+                _curValueCheck = 0;
+                var direc = (tooth.transform.position - _originalPosition).normalized;
+                if (direc.x * _prevDirection.x < 0 || direc.y * _prevDirection.y < 0)
                 {
-                    _curStack = 0;
-                    var newValue = slider.sizeDelta.x + Random.Range(15f, 20f);
-                    if(newValue > maxValue) newValue = maxValue;
-                    slider.sizeDelta = new Vector2(newValue,slider.sizeDelta.y);
-                    _prevPos = transform.position;
+                    stack.Push(addValuePerPush);
+                    _currentToothPosition = tooth.transform.position;
+                    _prevDirection = direc;
+                    if (stack.IsFull())
+                    {
+                        Invoke(nameof(NextScene),1f);
+                    }
                 }
             }
         }
@@ -62,11 +54,16 @@ namespace Chapters.Chapter1
         {
             ComebackToOrigin();
         }
+        
         public void ComebackToOrigin()
         {
-            transform.position = _brush;
-            _curStack = 0;
-            _prevPos = transform.position;
+            tooth.transform.position = _originalPosition;
+            _currentToothPosition = tooth.transform.position;
+        }
+
+        public void NextScene()
+        {
+            SceneManager.Instance.ChangeScene(EScene.Chapter1S3);
         }
     }
 }

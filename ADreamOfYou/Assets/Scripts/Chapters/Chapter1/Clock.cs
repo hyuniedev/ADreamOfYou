@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Chapters.Chapter1
 {
-    public class Clock : MonoBehaviour, IPointerDownHandler
+    public class Clock : MonoBehaviour, IPointerDownHandler, ISceneManager
     {
         private Animator _animator;
         private readonly string ANIMATION_CLOCK = "clock";
@@ -25,10 +25,10 @@ namespace Chapters.Chapter1
         {
             _animator.enabled = false;
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            Invoke(nameof(NextPage),1f);
+            Invoke(nameof(NextScene),1f);
         }
 
-        private void NextPage()
+        public void NextScene()
         {
             SceneManager.Instance.ChangeScene(EScene.Chapter1S2);
         }

@@ -6,6 +6,7 @@ namespace Enum
     {
         Menu,
         Chapter1S1,
-        Chapter1S2
+        Chapter1S2,
+        Chapter1S3,
     }
 }
